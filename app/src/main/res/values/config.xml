@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="config_rat_unknown" translatable="false">""</string>
+    <string name="defaultPath">/data/iptable-rules</string>
+    <string name="iptables_V4">iptables</string>
+    <string name="iptables_V6">ip6tables</string>
+    <string name="vendor_in">vendor_fw_INPUT</string>
+    <string name="vendor_out">vendor_fw_OUTPUT</string>
+    <!--port-->
+    <string name="port_in">fw_port_INPUT</string>
+    <string name="port_out">fw_port_OUTPUT</string>
+    <!--white lists-->
+    <string name="ip_white_in">fw_ip_whitelist_INPUT</string>
+    <string name="ip_white_out">fw_ip_whitelist_OUTPUT</string>
+    <string name="app_white_in">fw_app_whitelist_INPUT</string>
+    <string name="app_white_out">fw_app_whitelist_OUTPUT</string>
+    <!--black lists-->
+    <string name="ip_black_in">fw_ip_blacklist_INPUT</string>
+    <string name="ip_black_out">fw_ip_blacklist_OUTPUT</string>
+    <string name="app_black_in">fw_app_blacklist_INPUT</string>
+    <string name="app_black_out">fw_app_blacklist_OUTPUT</string>
+</resources>

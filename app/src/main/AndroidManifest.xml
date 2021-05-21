@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gxatek.firewall"
+    android:sharedUserId="android.uid.system">
+
+    <application
+        android:name=".FirewallApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/AppTheme"
+        android:directBootAware="true"
+        android:persistent="true">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--hide view for user, could open this page by command-->
+                <!--<action android:name="android.intent.action.VIEW" />-->
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.FirewallService"
+            android:enabled="true"
+            android:exported="true" />
+
+    </application>
+
+</manifest>

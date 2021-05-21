@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">GxatekFirewall</string>
+    <string name="firewall_settings">网络防火墙设置</string>
+    <string name="portManagement">端口管理</string>
+    <string name="enable">启用</string>
+    <string name="disable">禁用</string>
+    <string name="ipManagement">IP管理</string>
+    <string name="appManagement">App管理</string>
+    <string name="rawCmd">原始命令</string>
+    <string name="add">添加</string>
+    <string name="remove">移除</string>
+    <string name="clear">清除</string>
+    <string name="execute">执行</string>
+    <string name="save">保存</string>
+    <string name="restore">恢复</string>
+    <string name="whiteList">白名单</string>
+    <string name="blackList">黑名单</string>
+    <string name="path">配置路径</string>
+    <string name="dataSwitch">移动数据</string>
+
+</resources>
