@@ -1,0 +1,91 @@
+{
+    "version":"0.01",
+    "interfaces":[
+        "eth0",
+        "eth1"
+    ],
+    "rule_mode":2,
+    "log_switch":0,
+    "stateful_firewall":1,
+    "network_management":{
+        "white_list":{
+            "ifaces_rules":[
+                {
+                    "iface":"",
+                    "uid":[],
+                    "package_name":""
+                }
+            ],
+            "apps_rules":[
+                {
+                    "uid":null,
+                    "package_name":"",
+                    "url":[],
+                    "ip":[],
+                    "port":[],
+                    "iface":""
+                }
+            ],
+            "destination_ip":[
+                {
+                    "ip":"",
+                    "iface":""
+                }
+            ],
+            "ip_port_combined":[
+                {
+                    "port":null,
+                    "source_ip":"",
+                    "iface":""
+                }
+            ],
+            "mac_rules":[
+                {
+                    "allowed_mac":[],
+                    "prohibited_mac":[],
+                    "iface":""
+                }
+            ],
+            "url":[]
+        },
+        "black_list":{
+            "port":[135,139,445],
+            "ip":[],
+            "url":[],
+            "uid":[],
+            "mac":[]
+        }
+    },
+    "network_isolation":[
+        {
+            "source_iface":[],
+            "destination_iface":[]
+        }
+    ],
+    "extended_iptables_command":[
+        "iptables -t filter -N vendor_fw_INPUT",
+        "iptables -t filter -N vendor_fw_OUTPUT",
+        "iptables -t filter -N fw_port_INPUT",
+        "iptables -t filter -N fw_port_OUTPUT",
+        "iptables -t filter -N fw_ip_blacklist_INPUT",
+        "iptables -t filter -N fw_ip_blacklist_OUTPUT",
+        "iptables -t filter -N fw_app_blacklist_INPUT",
+        "iptables -t filter -N fw_app_blacklist_OUTPUT",
+        "iptables -t filter -N fw_ip_whitelist_INPUT",
+        "iptables -t filter -N fw_ip_whitelist_OUTPUT",
+        "iptables -t filter -N fw_app_whitelist_INPUT",
+        "iptables -t filter -N fw_app_whitelist_OUTPUT",
+        "iptables -t filter -A INPUT -j vendor_fw_INPUT",
+        "iptables -t filter -A OUTPUT -j vendor_fw_OUTPUT",
+        "iptables -t filter -A vendor_fw_INPUT -j fw_port_INPUT",
+        "iptables -t filter -A vendor_fw_OUTPUT -j fw_port_OUTPUT",
+        "iptables -t filter -A fw_port_INPUT -j fw_ip_blacklist_INPUT",
+        "iptables -t filter -A fw_port_OUTPUT -j fw_ip_blacklist_OUTPUT",
+        "iptables -t filter -A fw_ip_blacklist_INPUT -j fw_app_blacklist_INPUT",
+        "iptables -t filter -A fw_ip_blacklist_OUTPUT -j fw_app_blacklist_OUTPUT",
+        "iptables -t filter -A fw_app_blacklist_INPUT -j fw_ip_whitelist_INPUT",
+        "iptables -t filter -A fw_app_blacklist_OUTPUT -j fw_ip_whitelist_OUTPUT",
+        "iptables -t filter -A fw_ip_whitelist_INPUT -j fw_app_whitelist_INPUT",
+        "iptables -t filter -A fw_ip_whitelist_OUTPUT -j fw_app_whitelist_OUTPUT"
+    ]
+}
